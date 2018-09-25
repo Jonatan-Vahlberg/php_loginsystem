@@ -114,12 +114,17 @@ header > nav ul{
 header > nav ul li{
     float:left;
     list-style: none;
+    margin: 0 15px;
 }
+
 header > nav ul li a{
     float:left;
     font-size:16px;
     color:#111;
     line-height: 63px;
+}
+header > nav ul li a:hover{
+    font-weight:bold;
 }
 body{
     background-color:rgba(162, 162, 162, 0.583);
@@ -180,6 +185,11 @@ header .nav_login  a:link{
     cursor:pointer;
 
 }
+header .nav_login  a:hover{
+    font-weight: bold;
+
+}
+
 .main_container{
     padding-top:40px;
 }
@@ -189,7 +199,21 @@ header .nav_login  a:link{
    color: #111;
    line-height: 50px;
    text-align: center;
+   position: relative;
 }
+.main_container #head::before{
+    content: "";
+    position: absolute;
+    width: 42px;
+    height:50px;
+    background: rgba(159, 0, 0, 0.826);
+    border-radius: 30%;
+    margin-right: 1%;
+    z-index: -1;  
+}
+   
+
+
 
 /*Signup form*/
 .signup_Form{
@@ -225,4 +249,77 @@ header .nav_login  a:link{
 }
 .signup_Form button:hover{
     background: #111;
+}
+/*Member area*/
+.main_container  .member_area{
+    width: 80%;
+    margin: 0 auto;
+    height: 600px;
+    background-color: #fff;
+    position: relative;
+}
+.member_area .memhead{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: rgba(77, 0, 0, 0.646) 1px 0px;
+    
+}
+.center{
+    text-align: center;
+    margin:0 auto;
+    width:50%;
+    margin-bottom: 20px;
+}
+.member_area .pictureframe{
+    width: 25%;
+    margin: 0 0 0 20px;
+    height: 250px;
+    position: absolute;
+    border: rgba(77, 0, 0, 0.646) 4px dotted;
+    background: url("./images/youHere.png")no-repeat;
+    background-size: 100% 50%;
+    transform: scale(1.01);
+    display: inline;
+}
+.member_area .memberinfo{
+    width: 70%;
+    margin: 0 0 0 10px;
+    float: right;
+    height: 250px;
+    
+    display: inline;
+}
+.member_area .memberinfo input{
+    width:140px;
+    height:30px;
+    padding: 0 10px;
+    margin-right: 10px;
+    margin: 5px 0;
+    border:none;
+    background-color:rgba(162, 162, 162, 0.583);
+    font-size: 14px;
+    color: #111;
+    line-height: 30px;
+    display: block;
+}
+.member_area .memberinfo button{
+    float:left;
+    width:150px;
+    height:30px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border:none;
+    background-color:#f3f3f3;
+    font-size: 14px;
+    color: #111;
+    line-height: 30px;
+    cursor: pointer;
+    
+}
+.member_area .memberinfo button:hover{
+    
+    background-color:#ccc;
+    
+    
 }

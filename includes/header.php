@@ -15,7 +15,12 @@
         <nav>
             <div class="main_wrapper">
                 <ul>
-                    <li ><a href="index.php">Home</a></li>
+                    <li id="homeLink" ><a href="index.php">Home</a></li>
+                   <?php 
+                        if(isset($_SESSION['u_id'])){
+                            echo '<li><a href="memberPage.php">Member Area</a></li>';
+                        }
+                    ?>
                 </ul>
             
                 <div class="nav_login">
