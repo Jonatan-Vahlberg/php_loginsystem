@@ -57,9 +57,22 @@
                                 $sqli = "INSERT INTO users (u_f, u_l, u_n, u_p, u_e) 
                                 VALUES('$first','$last','$name','$hashedpass','$mail');";
                                 $resulti = mysqli_query($conn,$sqli);
-
-                                header("Location: ../signup.php?signup=success");
+                                $sql = "SELECT * FROM users WHERE u_n = '$name' AND u_f = '$first'";
+                                $result = mysqli_query($conn,$result);
+                                if(mysqli_num_rows < 1){
+                                    header("Location: ../signup.php?signup=Error");
                                 exit();
+                                }
+                                else{
+                                    while($row = mysqli_fetxh_assoc($result));
+                                    $userid = $row['id'];
+                                    $sqla = "INSERT INTO profileimg (userid,status) 
+                                    VALUES('$userid',1)";
+                                    mysqli_query($conn,$sqla);
+                                    header("Location: ../signup.php?signup=success");
+                                    xit();
+                                }
+                                
                             }
                         }
                     }       
